@@ -3,7 +3,10 @@ use Mojolicious::Lite;
 
 get '/' => sub {
   my $c = shift;
-  $c->render(template => 'index');
+  print '-----' ."\n"    ;       # 追加:単なる区切り線
+  print $c->param('body') . "\n";# 追加:デバッグプリント
+  print '-----' ."\n"    ;       # 追加:単なる区切り線
+  $c->render('index');
 };
 
 app->start;
