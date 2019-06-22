@@ -1,6 +1,8 @@
 #!/usr/bin/env perl
 use Mojolicious::Lite;
 
+my @entries = (); # 追加する
+
 get '/' => sub {
   my $c = shift;
   my $entry = $c->param('body') ;
@@ -20,7 +22,7 @@ __DATA__
     <input name="body" type="text">
     <input type="submit" value="投稿する">
 </form>
-<p><%= $kakikomi %></p> <!-- 追加 -->
+<p><%= $kakikomi %></p>
 
 @@ layouts/default.html.ep
 <!DOCTYPE html>
