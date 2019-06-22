@@ -3,9 +3,8 @@ use Mojolicious::Lite;
 
 get '/' => sub {
   my $c = shift;
-  print '-----' ."\n"    ;       # 追加:単なる区切り線
-  print $c->param('body') . "\n";# 追加:デバッグプリント
-  print '-----' ."\n"    ;       # 追加:単なる区切り線
+  my $entry = $c->param('body') ; # クエリストリング body を受け取り $entry に代入
+  $c->stash( kakikomi => $entry );# 追加
   $c->render('index');
 };
 
