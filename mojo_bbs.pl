@@ -11,8 +11,8 @@ __DATA__
 
 @@ index.html.ep
 % layout 'default';
-% title 'Welcome';
-<h1>Welcome to the Mojolicious real-time web framework!</h1>
+% title 'BBS';
+<h1>掲示板です</h1>
 
 @@ layouts/default.html.ep
 <!DOCTYPE html>
