@@ -13,6 +13,11 @@ __DATA__
 % layout 'default';
 % title 'BBS';
 <h1>掲示板です</h1>
+<!-- ここから4行追加 -->
+<form action="/" method="get">
+    <input name="body" type="text">
+    <input type="submit" value="投稿する">
+</form>
 
 @@ layouts/default.html.ep
 <!DOCTYPE html>
