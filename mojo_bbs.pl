@@ -1,12 +1,13 @@
 #!/usr/bin/env perl
 use Mojolicious::Lite;
 
-my @entries = (); # 追加する
+my @entries = ();
 
 get '/' => sub {
-  my $c = shift;
-  my $entry = $c->param('body') ;
-  $c->stash( kakikomi => $entry );
+  my $c     = shift;
+  my $entry = $c->param('body');
+  push @entries , $entry;            # 追加
+  $c->stash( kakikomi => \@entries );# 変更
   $c->render('index');
 };
 
