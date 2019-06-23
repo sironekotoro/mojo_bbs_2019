@@ -23,7 +23,11 @@ __DATA__
     <input name="body" type="text">
     <input type="submit" value="投稿する">
 </form>
-<p><%= $kakikomi %></p>
+<p>
+<% for my $kakiko (@{$kakikomi}){ %>
+    <%= $kakiko %><br>
+<% } %>
+</p>
 
 @@ layouts/default.html.ep
 <!DOCTYPE html>
